@@ -10,11 +10,15 @@
 
 @interface PSSprite : NSObject
 
--(id)initWithImage: (UIImage *)image;
+@property UIImageView *imageView;
+@property UIImageView *secondaryImageView;
+
+-(id)initWithImageView: (UIImageView *)iv;
 -(void)setPosition: (CGPoint) pt;
 -(void)render;
--(void)update;
+-(void)update:(double)timeDiff;
 -(void)setContinuousScrollingSpeed:(float)speed;
 -(void)setLoops:(BOOL)doesLoop;
+-(void)setResetToRightSide: (BOOL)b;
 
 @end

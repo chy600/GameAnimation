@@ -11,7 +11,7 @@
 
 @interface PSGameSurface : UIView
 
--(void)addSprite:(PSSprite *)sprite;
--(void)tick;
+-(void)addSprite:(PSSprite *)sprite toView:(UIView *)v;
+-(void)tick: (double)timeDiff;
 
 @end

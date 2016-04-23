@@ -30,14 +30,17 @@
     }
 }
 
--(void)tick {
+-(void)tick: (double)timeDiff {
     for (PSSprite *s in sprites){
-        [s update];
+        [s update:timeDiff];
     }
 }
 
-- (void)addSprite: (PSSprite *)sprite {
+- (void)addSprite: (PSSprite *)sprite toView: (UIView *)v{
     [sprites addObject:sprite];
+    [v addSubview: sprite.imageView];
+    if (sprite.secondaryImageView)
+        [v addSubview:sprite.secondaryImageView];
 }
 
 
